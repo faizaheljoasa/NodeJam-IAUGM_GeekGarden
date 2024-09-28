@@ -1,0 +1,216 @@
+❯ npx sequelize-cli model:generate --name Product --attributes name:string,description:string,price:decimal,userId:integer
+
+> nodejam-project@1.0.0 npx
+> sequelize-cli model:generate --name Product --attributes name:string,description:string,price:decimal,userId:integer
+
+
+Sequelize CLI [Node: 20.11.0, CLI: 6.6.2, ORM: 6.37.3]
+
+New model was created at /Users/macbookpro/Downloads/NodeJam/src/models/product.js .
+New migration was created at /Users/macbookpro/Downloads/NodeJam/db/migrations/20240928092123-create-product.js .
+❯ npx sequelize-cli db:migrate
+
+> nodejam-project@1.0.0 npx
+> sequelize-cli db:migrate
+
+
+Sequelize CLI [Node: 20.11.0, CLI: 6.6.2, ORM: 6.37.3]
+
+Loaded configuration file "config/database.js".
+Using environment "development".
+== 20240928092123-create-product: migrating =======
+== 20240928092123-create-product: migrated (0.044s)
+
+❯ npm run dev
+
+> nodejam-project@1.0.0 dev
+> nodemon ./src/index.js
+
+[nodemon] 3.1.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node ./src/index.js`
+node:internal/modules/cjs/loader:1147
+  throw err;
+  ^
+
+Error: Cannot find module './routes/product.router'
+Require stack:
+- /Users/macbookpro/Downloads/NodeJam/src/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+    at Module._load (node:internal/modules/cjs/loader:985:27)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/index.js:4:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/Users/macbookpro/Downloads/NodeJam/src/index.js' ]
+}
+
+Node.js v20.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+/Users/macbookpro/Downloads/NodeJam/src/controllers/product.controller.js:21
+    const userId = req.user.id;
+                            ^
+
+TypeError: Cannot read properties of undefined (reading 'id')
+    at post (/Users/macbookpro/Downloads/NodeJam/src/controllers/product.controller.js:21:29)
+    at Layer.handle [as handle_request] (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/macbookpro/Downloads/NodeJam/node_modules/express/lib/router/index.js:47:12)
+
+Node.js v20.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+^C      
+❯ npm install jsonwebtoken bcryptjs
+
+added 13 packages, and audited 241 packages in 2s
+
+37 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+❯ npm run dev
+
+> nodejam-project@1.0.0 dev
+> nodemon ./src/index.js
+
+[nodemon] 3.1.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node ./src/index.js`
+/Users/macbookpro/Downloads/NodeJam/src/routers/auth.router.js:6
+router.post('/signup', authController.signup);
+^
+
+ReferenceError: router is not defined
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/routers/auth.router.js:6:1)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/index.js:3:20)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+
+Node.js v20.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+/Users/macbookpro/Downloads/NodeJam/src/routers/auth.router.js:6
+router.post('/signup', authController.signup);
+^
+
+ReferenceError: router is not defined
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/routers/auth.router.js:6:1)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/index.js:3:20)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+
+Node.js v20.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+node:internal/modules/cjs/loader:1147
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authenticate'
+Require stack:
+- /Users/macbookpro/Downloads/NodeJam/src/routers/product.router.js
+- /Users/macbookpro/Downloads/NodeJam/src/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+    at Module._load (node:internal/modules/cjs/loader:985:27)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (/Users/macbookpro/Downloads/NodeJam/src/routers/product.router.js:4:22)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/macbookpro/Downloads/NodeJam/src/routers/product.router.js',
+    '/Users/macbookpro/Downloads/NodeJam/src/index.js'
+  ]
+}
+
+Node.js v20.11.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`id` = '1';
+Executing (default): DELETE FROM `Users` WHERE `id` = 1
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User`;
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`id` = '2';
+Executing (default): DELETE FROM `Users` WHERE `id` = 2
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User`;
+Executing (default): INSERT INTO `Users` (`id`,`name`,`username`,`password`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'faizzahell' LIMIT 1;
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+^C
+❯ npm run dev
+
+> nodejam-project@1.0.0 dev
+> nodemon ./src/index.js
+
+[nodemon] 3.1.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'faizzahell' LIMIT 1;
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./src/index.js`
+server listen on port 8000
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+Executing (default): INSERT INTO `Products` (`id`,`name`,`description`,`price`,`userId`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+Executing (default): INSERT INTO `Products` (`id`,`name`,`description`,`price`,`userId`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User`;
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product` WHERE `Product`.`id` = '1';
+Executing (default): UPDATE `Products` SET `name`=?,`price`=?,`updatedAt`=? WHERE `id` = ?
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product` WHERE `Product`.`id` = '1';
+Executing (default): DELETE FROM `Products` WHERE `id` = 1
+Executing (default): INSERT INTO `Users` (`id`,`name`,`username`,`password`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'faalezi' LIMIT 1;
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+Executing (default): INSERT INTO `Products` (`id`,`name`,`description`,`price`,`userId`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product`;
+Executing (default): SELECT `id`, `name`, `description`, `price`, `userId`, `createdAt`, `updatedAt` FROM `Products` AS `Product` WHERE `Product`.`id` = '2';
+Executing (default): SELECT `id`, `name`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User`;
